@@ -1,9 +1,14 @@
 import React from 'react'
+import Answers from './Answers'
 
-const OneQuestion = () => {
+const OneQuestion = ({question,brojac}) => {
   return (
-    <div>
-      
+    <div className='oneQuestion'>
+      <h3>{brojac}. {question.content}</h3>
+      <div>
+        <Answers answers={question.answer}/>
+      </div>
+      <h3></h3>
     </div>
   )
 }

@@ -1,9 +1,10 @@
 import React from 'react'
 
-const OneAnswer = () => {
+const OneAnswer = ({answer}) => {
   return (
-    <div>
-      
+    <div className='answer'>
+      <input type="checkbox" id="answerCB" name="answerCB" value={answer.content} />
+      <label for="answerCB">{answer.content}</label>
     </div>
   )
 }

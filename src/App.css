@@ -11,18 +11,24 @@ body{
   justify-content: space-between;
 }
 
-.login,.register{
-    margin-top:10px;
+.login,.register,.homePage{
+    margin-top:20px;
     margin-left: 5px;
     margin-right: 5px;
     border: none;
     background: none;
     color: wheat;
     cursor: pointer;
+    text-decoration: none;
+}
+
+.homePage{
+  padding-left: 10px;
 }
 
 .login:hover,
-.register:hover{
+.register:hover,
+.homePage:hover{
   color:white;
 }
 
@@ -47,7 +53,7 @@ body{
   text-align: center;
 }
 
-.tests{
+.tests,.questions{
   margin-top: 50px;
   display: flex;
   flex-direction: row;
@@ -58,17 +64,58 @@ body{
   max-height: 100%;
 }
 
-.test{
+.test,.oneQuestion{
   cursor: pointer;
   width: auto;
   height: auto;
   padding: 10px 10px 10px 10px;
+  margin-top: 15px;
   border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.464);
   backdrop-filter: blur(2px);
+  color: white;
+  text-decoration: none;
 }
 
-.test:hover{
+.oneQuestion{
+  font-size: medium;
+}
+
+.test:hover,
+.oneQuestion:hover{
   background-color: rgba(0, 0, 0, 0.82);
   backdrop-filter: blur(2px);
 }
+
+.viewTest{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top:100px;
+  width: 95%;
+  height: auto;
+  color: white;
+  margin: 10px 30px 30px 30px;
+  padding-left: 10px ;
+}
+
+.answers{
+  margin-left: 30px;
+}
+
+.startTest{
+  position: relative;
+  top:50px;
+  color: white;
+  border: 2px solid wheat;
+  text-decoration: none;
+  border-radius: 20px;
+  padding: 5px 5px 5px 5px;
+  cursor: pointer;
+}
+
+.startTest:hover{
+  background-color: gray;
+  transition: background-color 0.5s linear 0.1s;
+}
+

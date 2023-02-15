@@ -1,9 +1,10 @@
 import React from 'react'
+import OneAnswer from './OneAnswer'
 
-const Answers = () => {
+const Answers = ({answers}) => {
   return (
-    <div>
-      
+    <div className='answers'>
+      {answers == null ? <></> : answers.map((answer)=> <OneAnswer key={answer.id} answer={answer}/>)}
     </div>
   )
 }

@@ -1,38 +1,74 @@
-.App {
+body{
+  font-family: cursive;
+  background-image: url('https://www.teahub.io/photos/full/102-1027020_work-in-progress.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+.navigationBar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.login,.register{
+    margin-top:10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: none;
+    background: none;
+    color: wheat;
+    cursor: pointer;
+}
+
+.login:hover,
+.register:hover{
+  color:white;
+}
+
+.credentials{
+  margin-left: 10px;
+  color:white
+}
+
+.title{
+  margin-left: 20px;
+  text-align: center;
+  color:whitesmoke;
+}
+
+.headline-test{
+  margin-top: 100px;
+  margin-left: 20px;
+  color:whitesmoke;
+}
+
+.options{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.tests{
+  margin-top: 50px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.test{
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  padding: 10px 10px 10px 10px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.464);
+  backdrop-filter: blur(2px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.test:hover{
+  background-color: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(2px);
 }

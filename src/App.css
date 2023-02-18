@@ -15,6 +15,7 @@ body{
 .btn-register,
 .homePage,
 .btn-logout{
+
     margin-top:20px;
     margin-left: 5px;
     margin-right: 5px;
@@ -28,6 +29,7 @@ body{
 .homePage{
   padding-left: 10px;
 }
+
 
 .btn-login:hover,
 .btn-register:hover,
@@ -326,12 +328,14 @@ label{
 }
 
 .btn-get-questions,.btn-get-answers{
+
   color: white;
   border: 2px solid wheat;
   text-decoration: none;
   border-radius: 20px;
   padding: 5px 5px 5px 5px;
   cursor: pointer;
+
   margin-left: 15px;
 }
 

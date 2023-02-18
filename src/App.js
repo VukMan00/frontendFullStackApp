@@ -1,10 +1,13 @@
 import './App.css';
 import NavBar from './components/NavBar';
+
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
 import Tests from './components/Tests';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import ViewTest from './components/ViewTest';
+
 import Login from './components/Login';
 import Register from './components/Register';
 import AddTest from './components/AddTest';
@@ -27,6 +30,7 @@ function App() {
     }
   },[questions]);
   
+
   const[tests,setTests] = useState();
   useEffect(()=> {
     if(tests==null){
@@ -39,6 +43,7 @@ function App() {
 
   const[viewTest, setViewTest] = useState();
 
+
   const[user,setUser] = useState({
     'username':'',
     'password':'',
@@ -47,6 +52,7 @@ function App() {
     'token':'',
     'role':''
   });
+
 
   function addViewTest(testId){
     tests.forEach((test)=>{
@@ -60,6 +66,7 @@ function App() {
     console.log(userLogin)
     setUser(userLogin);
   }
+
 
   function deleteTest(){
     var selects = document.getElementsByClassName("select");
@@ -179,11 +186,13 @@ function App() {
   return (
     <BrowserRouter className="App">
       <NavBar user={user}/>
+
       <Routes>
           <Route
             path="/"
             element={
               <>
+
                 <div className='title'>
                   <h1>Dobrodosli na sajt najvece baze testova</h1>
                 </div>
@@ -198,10 +207,12 @@ function App() {
                 </div>
                 <div className='headline-test'>
                   <Tests tests={tests} addViewTest={addViewTest} handleChange={handleChange} />
+
                 </div>
               </>
             }
           />
+
           <Route path="/viewTest" element={<ViewTest viewTest={viewTest} user={user}/>} />
           <Route path="/login" element={<Login addUser={addUser}/>}/>
           <Route path="/register" element={<Register />}/>
@@ -215,6 +226,7 @@ function App() {
           <>
           </>
           }
+
       </Routes>
     </BrowserRouter>
   );

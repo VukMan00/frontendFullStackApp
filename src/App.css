@@ -1,38 +1,366 @@
-.App {
+body{
+  font-family: cursive;
+  background-image: url('https://www.teahub.io/photos/full/102-1027020_work-in-progress.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+.navigationBar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btn-login,
+.btn-register,
+.homePage,
+.btn-logout{
+    margin-top:20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: none;
+    background: none;
+    color: wheat;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.homePage{
+  padding-left: 10px;
+}
+
+.btn-login:hover,
+.btn-register:hover,
+.homePage:hover,
+.btn-logout:hover{
+  color:white;
+}
+
+.credentials{
+  text-align: center;
+  color:white
+}
+
+.title{
+  margin-left: 20px;
+  text-align: center;
+  color:whitesmoke;
+}
+
+.headline-test{
+  margin-top: 100px;
+  margin-left: 20px;
+  color:whitesmoke;
+}
+
+.options{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.tests,.questions{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.test,.oneQuestion{
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  padding: 10px 10px 10px 10px;
+  margin-top: 15px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.464);
+  backdrop-filter: blur(2px);
+  color: white;
+  text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.oneQuestion{
+  font-size: medium;
+}
+
+.test:hover,
+.oneQuestion:hover,
+.oneAnswerView:hover{
+  background-color: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(2px);
+}
+
+.viewTest{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  position: relative;
+  top:100px;
+  width: 95%;
+  height: auto;
   color: white;
+  margin: 10px 30px 30px 30px;
+  padding-left: 10px ;
 }
 
-.App-link {
-  color: #61dafb;
+.one-test,.one-question,.one-answer{
+  display: flex;
+  flex-direction: row;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.answers{
+  margin-left: 30px;
+}
+
+.startTest{
+  position: relative;
+  top:50px;
+  color: white;
+  border: 2px solid wheat;
+  text-decoration: none;
+  border-radius: 20px;
+  padding: 5px 5px 5px 5px;
+  cursor: pointer;
+}
+
+.startTest:hover,
+.btn-get-questions:hover,
+.btn-get-answers:hover{
+  background-color: gray;
+  transition: background-color 0.5s linear 0.1s;
+}
+
+.login{
+  border: 2px solid white;
+  border-radius: 20px;
+  width: 20%;
+  padding: 10px 10px 10px 10px;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+}
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+input{
+  margin-top: 10px;
+  border-radius: 15px;
+}
+
+label{
+  margin-top: 10px;
+  color:wheat;
+}
+
+.button{
+  text-align: center;
+}
+
+#btn-login{
+  width: 20%;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+#btn-login:hover,
+.btn-addTest:hover,
+.btn-addQuestion:hover,
+.btn-addAnswer:hover,
+.btn-updateAnswer:hover,
+.btn-updateQuestion:hover,
+.btn-updateTest:hover{
+  background-color: grey;
+  color:white;
+  transition: background-color 0.5s linear 0.1s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+}
+
+.link{
+  text-align: center;
+  margin-top: 15px;
+}
+
+.registerLink{
+  color:wheat;
+}
+
+.registerLink:hover{
+  color:blue;
+}
+
+#alert{
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+
+#box{
+  border-radius: 5px; 
+  height: auto;
+  width: auto;
+  float:left;
+  text-align: center;
+  box-shadow: 2px 2px 8px black;
+  background-color: white;
+}
+
+.obavestenje{
+  background-color: saddlebrown;
+  color: white;
+  font-size: larger;
+  padding:5px;
+}
+
+.sadrzaj{
+  margin-top: 30px;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+#confirm{
+  height: 25px;
+  width: 80px;
+  border-radius: 8px;
+  background-color: aliceblue;
+  color: saddlebrown;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 400px;
+  box-sizing: border-box;
+  font-size: medium;
+  font-weight: bold;
+}
+
+#confirm:hover{
+  background-color: #FF8000;
+  color: aliceblue;
+  transition: background-color 0.5s linear 0.1s;
+}
+
+#usernameErr,#passwordErr,#emailErr,#firstnameErr,#lastnameErr,#contentErr,
+#nameErr,#authorErr,#maxPointsErr,#pointsErr{
+  background: none;
+  border: none;
+  color:red;
+  visibility: hidden;
+}
+
+.options{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.operation,.addQuestionToTest,.addAnswersToQuestion{
+  color: white;
+  border: 2px solid wheat;
+  text-decoration: none;
+  text-align: center;
+  padding: 5px 5px 5px 5px;
+  border-radius: 20px;
+}
+
+.addQuestionToTest,.addAnswersToQuestion{
+  margin-top: 10px;
+  background: none;
+  cursor: pointer;
+}
+
+.operation:hover,
+.addQuestionToTest:hover,
+.addAnswersToQuestion:hover{
+  background-color: gray;
+  transition: background-color 0.5s linear 0.1s;
+}
+
+.test-data,.question-data,.answer-data{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 15%;
+  top: 100px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin-bottom: 40px;
+}
+
+#text{
+  margin-left: 20px;
+  color:wheat;
+}
+
+
+.btn-addTest,.btn-updateTest{
+  width: 10%;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.btn-addQuestion,.btn-updateAnswer{
+  width: 40%;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.btn-addAnswer,.btn-updateAnswer{
+  width: 50%;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.btn-updateAnswer,.btn-updateQuestion{
+  visibility: hidden;
+}
+
+.btn-get-questions,.btn-get-answers{
+  color: white;
+  border: 2px solid wheat;
+  text-decoration: none;
+  border-radius: 20px;
+  padding: 5px 5px 5px 5px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.answersInAddAnswer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.oneAnswerView{
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  padding: 10px 10px 10px 10px;
+  margin-top: 15px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.464);
+  backdrop-filter: blur(2px);
+  color: white;
+  text-decoration: none;
+}
+
+.points{
+  margin-top: 10px;
+}
+.testQuestionPoints{
+  margin-top: 20px;
+  text-align: start;
 }

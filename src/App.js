@@ -1,10 +1,18 @@
 import './App.css';
 import NavBar from './components/NavBar';
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+
 import Tests from './components/Tests';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import ViewTest from './components/ViewTest';
+
+import Login from './components/Login';
+import Register from './components/Register';
+
+
 
 function App() {
   const[tests,setTests] = useState();
@@ -19,6 +27,18 @@ function App() {
 
   const[viewTest, setViewTest] = useState();
 
+
+  const[user,setUser] = useState({
+    'username':'',
+    'password':'',
+    'firstname':'',
+    'lastname':'',
+    'token':'',
+    'role':''
+  });
+
+
+
   function addViewTest(testId){
     tests.forEach((test)=>{
       if(test.id === testId){
@@ -27,9 +47,18 @@ function App() {
     });
   }
 
+
+  function addUser(userLogin){
+    console.log(userLogin)
+    setUser(userLogin);
+  }
+
   return (
     <BrowserRouter className="App">
-      <NavBar />
+      <NavBar user={user}/>
+
+  
+
       <Routes>
           <Route
             path="/"
@@ -46,7 +75,12 @@ function App() {
               </>
             }
           />
-          <Route path="/viewTest" element={<ViewTest viewTest={viewTest} />} />
+
+          <Route path="/viewTest" element={<ViewTest viewTest={viewTest} user={user}/>} />
+          <Route path="/login" element={<Login addUser={addUser}/>}/>
+          <Route path="/register" element={<Register />}/>
+
+
       </Routes>
     </BrowserRouter>
   );

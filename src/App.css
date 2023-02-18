@@ -11,7 +11,13 @@ body{
   justify-content: space-between;
 }
 
-.login,.register,.homePage{
+
+.btn-login,
+.btn-register,
+.homePage,
+.btn-logout{
+
+
     margin-top:20px;
     margin-left: 5px;
     margin-right: 5px;
@@ -26,14 +32,21 @@ body{
   padding-left: 10px;
 }
 
-.login:hover,
-.register:hover,
-.homePage:hover{
+
+.btn-login:hover,
+.btn-register:hover,
+.homePage:hover,
+.btn-logout:hover
+{
+
   color:white;
 }
 
 .credentials{
-  margin-left: 10px;
+
+  text-align: center;
+
+
   color:white
 }
 
@@ -79,6 +92,7 @@ body{
 
 .oneQuestion{
   font-size: medium;
+
 }
 
 .test:hover,
@@ -113,6 +127,135 @@ body{
   padding: 5px 5px 5px 5px;
   cursor: pointer;
 }
+
+.startTest:hover{
+  background-color: gray;
+  transition: background-color 0.5s linear 0.1s;
+}
+
+.login{
+  border: 2px solid white;
+  border-radius: 20px;
+  width: 20%;
+  padding: 10px 10px 10px 10px;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+}
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+input{
+  margin-top: 10px;
+  border-radius: 15px;
+}
+
+label{
+  margin-top: 10px;
+  color:wheat;
+}
+
+.button{
+  text-align: center;
+}
+
+#btn-login{
+  width: 20%;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+#btn-login:hover{
+  background-color: grey;
+  color:white;
+  transition: background-color 0.5s linear 0.1s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+}
+
+.link{
+  text-align: center;
+  margin-top: 15px;
+}
+
+.registerLink{
+  color:wheat;
+}
+
+.registerLink:hover{
+  color:blue;
+}
+
+#alert{
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+
+#box{
+  border-radius: 5px; 
+  height: auto;
+  width: auto;
+  float:left;
+  text-align: center;
+  box-shadow: 2px 2px 8px black;
+  background-color: white;
+}
+
+.obavestenje{
+  background-color: saddlebrown;
+  color: white;
+  font-size: larger;
+  padding:5px;
+}
+
+.sadrzaj{
+  margin-top: 30px;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+#confirm{
+  height: 25px;
+  width: 80px;
+  border-radius: 8px;
+  background-color: aliceblue;
+  color: saddlebrown;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 400px;
+  box-sizing: border-box;
+  font-size: medium;
+  font-weight: bold;
+}
+
+#confirm:hover{
+  background-color: #FF8000;
+  color: aliceblue;
+  transition: background-color 0.5s linear 0.1s;
+}
+
+#usernameErr,#passwordErr,#emailErr,#firstnameErr,#lastnameErr{
+  background: none;
+  border: none;
+  color:red;
+  visibility: hidden;
+
+}
+
+
+
+
 
 .startTest:hover{
   background-color: gray;

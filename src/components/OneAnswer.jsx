@@ -1,3 +1,4 @@
+
 import React from 'react'
 
 const OneAnswer = ({answer}) => {
@@ -10,3 +11,5 @@ const OneAnswer = ({answer}) => {
 }
 
 export default OneAnswer
+
+

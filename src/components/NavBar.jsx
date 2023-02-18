@@ -6,7 +6,7 @@ const NavBar = ({user}) => {
   const location = useLocation();
   var pathname = location.pathname;
 
-  function logOut(){
+  function logOut(e){
     var axios = require('axios');
     var config = {
       method: 'post',
@@ -15,12 +15,20 @@ const NavBar = ({user}) => {
         'Authorization': 'Bearer ' + window.sessionStorage.getItem('auth_token'),
       }
     };
+
+    window.sessionStorage.setItem('auth_token',null);
+    window.sessionStorage.setItem('firstname',null);
+    window.sessionStorage.setItem('lastname',null);
+    window.sessionStorage.setItem('role',null);
+
     axios(config)
     .then(function (response) {
       console.log(JSON.stringify(response.data));
       user = null;
+      user.firstname = '';
+      user.lastname = '';
+      user.role = '';
       user.token = null;
-      sessionStorage.setItem('auth_token',user.token);
     })
     .catch(function (error) {
       console.log(error);
@@ -48,7 +56,7 @@ const NavBar = ({user}) => {
           </> 
           ):(
             <>
-            <Link to="" className='btn-logout' onClick={()=>logOut()}>LogOut</Link>
+            <Link to="" className='btn-logout' onClick={(e)=>logOut(e)}>LogOut</Link>
             </>
           )}
           </>
@@ -59,5 +67,3 @@ const NavBar = ({user}) => {
 }
 
 export default NavBar
-
-

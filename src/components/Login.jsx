@@ -1,3 +1,4 @@
+
 import axios from 'axios';
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
@@ -27,8 +28,11 @@ const Login = ({addUser}) => {
         axios.post("http://127.0.0.1:8000/api/login",userData)
         .then((res)=>{
             console.log(res.data);
-            if(res.data.succesfull === true){
+            if(res.data.successful === true){
                 window.sessionStorage.setItem('auth_token',res.data.access_token);
+                window.sessionStorage.setItem('firstname',res.data.firstname);
+                window.sessionStorage.setItem('lastname',res.data.lastname);
+                window.sessionStorage.setItem('role',res.data.role);
                 userData.firstname = res.data.firstname;
                 userData.lastname = res.data.lastname;
                 userData.token = res.data.access_token;

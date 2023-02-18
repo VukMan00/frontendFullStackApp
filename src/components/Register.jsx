@@ -1,3 +1,4 @@
+
 import axios from 'axios';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
@@ -25,13 +26,12 @@ const Register = () => {
         axios.post("http://127.0.0.1:8000/api/register",userData)
         .then((res)=>{
             console.log(res.data);
-            if(res.data.succesfull === true){
+            if(res.data.successful === true){
                 window.sessionStorage.setItem('auth_token',res.data.access_token);
                 navigate("/login");
             }
             else{
                 document.getElementById("alert").style.visibility = 'visible';
-                console.log(res.data.validator.username[0]);
                 validation(res);
             }
         }).catch((e)=>{
@@ -40,35 +40,35 @@ const Register = () => {
     }
 
     function validation(res){
-        if(res.data.validator.username!=null){
+        if(res.data.validator.username !== undefined){
             document.getElementById('usernameErr').style.visibility = 'visible';
             document.getElementById('usernameErr').value = res.data.validator.username[0];
         }
         else{
             document.getElementById('usernameErr').style.visibility = 'hidden';
         }
-        if(res.data.validator.password!=null){
+        if(res.data.validator.password !== undefined){
             document.getElementById('passwordErr').style.visibility = 'visible';
             document.getElementById('passwordErr').value = res.data.validator.password[0];
         }
         else{
             document.getElementById('passwordErr').style.visibility = 'hidden';
         }
-        if(res.data.validator.email!=null){
+        if(res.data.validator.email !== undefined){
             document.getElementById('emailErr').style.visibility = 'visible';
             document.getElementById('emailErr').value = res.data.validator.email[0];
         }
         else{
             document.getElementById('emailErr').style.visibility = 'hidden';
         }
-        if(res.data.validator.firstname!=null){
+        if(res.data.validator.firstname !== undefined){
             document.getElementById('firstnameErr').style.visibility = 'visible';
             document.getElementById('firstnameErr').value = res.data.validator.firstname[0];
         }
         else{
             document.getElementById('firstnameErr').style.visibility = 'hidden';
         }
-        if(res.data.validator.lastname!=null){
+        if(res.data.validator.lastname !== undefined){
             document.getElementById('lastnameErr').style.visibility = 'visible';
             document.getElementById('lastnameErr').value = res.data.validator.lastname[0];
         }
@@ -119,3 +119,4 @@ const Register = () => {
 }
 
 export default Register
+
